@@ -1,18 +1,21 @@
-package guvi;
-import java.util.Scanner;
+import java.util.*;
 public class ReverseNo {
-	public static void main(String args[])
-	{
-		int a,b;
+	public static void main(String[] args) {
 		Scanner s=new Scanner(System.in);
-		a=s.nextInt();
-		while(a>0)
-		{
-			b=a%10;
-			System.out.print(b);
-			a=a/10;
+		String str;
+		str=s.next();
+		int j=str.length();
+		j--;
+		char str1[]=str.toCharArray();
+		char temp;
+		for(int i=0;i<str1.length/2;i++){
+			temp=str1[i];
+			str1[i]=str1[j];
+			str1[j]=temp;
+			j--;
 		}
-		s.close();
+		str=new String(str1);
+		System.out.println(str);
+        s.close();
 	}
-
 }
